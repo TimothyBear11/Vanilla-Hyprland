@@ -1,4 +1,4 @@
-name: noctalia
+name: noctalia-shell
 type: shell
 commands:
   # ── Build dependencies for Quickshell (noctalia-qs) ──────────────────────
