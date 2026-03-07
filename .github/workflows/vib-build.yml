@@ -76,8 +76,21 @@ jobs:
             echo "HAS_UPDATES=1" >> "$GITHUB_ENV"
           else
             echo "Old digest is: $(cat last_digest.txt)"
+
             cmp -s digest.txt last_digest.txt
-            echo "HAS_UPDATES=$?" >> "$GITHUB_ENV"
+            CMP_EXIT_CODE=$?
+
+            # cmp exit codes:
+            # 0 = same (no updates)
+            # 1 = different (updates)
+            # 2 = error
+            if [ "$CMP_EXIT_CODE" = "2" ]; then
+              echo "cmp failed unexpectedly" >&2
+              exit 2
+            fi
+
+            echo "HAS_UPDATES=$CMP_EXIT_CODE" >> "$GITHUB_ENV"
+
           fi
 
       - name: Upload current digest
