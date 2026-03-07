@@ -1,4 +1,4 @@
-name: add-image-name
+name: add-image-name-abroot
 type: shell
 commands:
   - IMAGE_NAME="$(cat /image-info/image-name)"
