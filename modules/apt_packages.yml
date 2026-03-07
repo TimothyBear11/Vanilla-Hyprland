@@ -1,0 +1,7 @@
+# apt package install list for Debian sid hyprland daily-driver (excluding mako and slurp)
+
+apt_packages:
+  - package1
+  - package2
+  - package3
+  # Add more packages as needed, excluding mako and slurp
