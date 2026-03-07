@@ -1,4 +1,4 @@
-name: kde-apps
+name: kde-apps-apt
 type: apt
 sources:
   - packages:
