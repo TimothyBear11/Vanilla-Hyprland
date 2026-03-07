@@ -1,4 +1,4 @@
-name: core-packages
+name: core-packages-apt
 type: apt
 sources:
   - packages:
