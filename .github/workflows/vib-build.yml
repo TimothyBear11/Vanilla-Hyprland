@@ -137,7 +137,7 @@ jobs:
           rm -f Containerfile
           mkdir -p sources
 
-      - uses: vanilla-os/vib-gh-action@v1.0.7
+      - uses: vanilla-os/vib-gh-action@v1.1.0
         with:
           recipe: "recipe.yml"
           plugins: "Vanilla-OS/vib-fsguard:v1.5.3"
