@@ -1,15 +1,7 @@
 name: sddm-config-withbg
 type: shell
 commands:
-  - >-
-    sh -c 'BREEZE_CONF="/usr/share/sddm/themes/breeze/theme.conf";
-    if [ -f "$BREEZE_CONF" ]; then
-      if grep -q "^background=" "$BREEZE_CONF"; then
-        sed -i "s|^background=.*|background=/usr/share/backgrounds/tc.png|" "$BREEZE_CONF";
-      else
-        sed -i "/^\[General\]/a background=/usr/share/backgrounds/tc.png" "$BREEZE_CONF";
-      fi;
-    fi'
+  - sh -c 'BREEZE_CONF="/usr/share/sddm/themes/breeze/theme.conf"; if [ -f "$BREEZE_CONF" ]; then if grep -q "^background=" "$BREEZE_CONF"; then sed -i "s|^background=.*|background=/usr/share/backgrounds/tc.png|" "$BREEZE_CONF"; else sed -i "/^\[General\]/a background=/usr/share/backgrounds/tc.png" "$BREEZE_CONF"; fi; fi'
   - systemctl enable sddm || true
   - systemctl disable gdm3 || true
   - systemctl disable lightdm || true
