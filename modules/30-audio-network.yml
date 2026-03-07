@@ -1,0 +1,23 @@
+name: audio-network
+type: apt
+sources:
+  - packages:
+    # PipeWire audio stack
+    - pipewire
+    - pipewire-alsa
+    - pipewire-audio
+    - pipewire-pulse
+    - pipewire-jack
+    - wireplumber
+    - pavucontrol
+    # Bluetooth audio
+    - libspa-0.2-bluetooth
+    # Network management
+    - network-manager
+    - network-manager-gnome
+    # Security / keyring
+    - gnome-keyring
+    - libsecret-1-0
+    - libsecret-tools
+    # Polkit daemon
+    - policykit-1

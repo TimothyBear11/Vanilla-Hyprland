@@ -1,0 +1,54 @@
+name: core-packages
+type: apt
+sources:
+  - packages:
+    # Hyprland and Wayland compositor essentials
+    - hyprland
+    - xdg-desktop-portal
+    - xdg-desktop-portal-hyprland
+    - xdg-desktop-portal-gtk
+    - xdg-utils
+    # Wayland utilities
+    - wl-clipboard
+    - cliphist
+    - grim
+    - swappy
+    - wlsunset
+    # Hardware/display control
+    - cava
+    - ddcutil
+    - brightnessctl
+    - playerctl
+    # Shell and terminal tools
+    - fish
+    - fastfetch
+    - git
+    - neovim
+    - nano
+    # Session and dbus
+    - dbus-user-session
+    - dbus-x11
+    # Fonts
+    - fonts-noto
+    - fonts-noto-color-emoji
+    - fonts-font-awesome
+    # Runtime Qt6 QML modules needed by Quickshell / Noctalia at runtime
+    - qml6-module-qtquick-effects
+    - qml6-module-qtquick-shapes
+    - qml6-module-qtquick-controls
+    - qml6-module-qtquick-layouts
+    - qml6-module-qt5compat-graphicaleffects
+    # System essentials for a Debian Sid image
+    - bash-completion
+    - sudo
+    - systemd
+    - systemd-sysv
+    - ca-certificates
+    - curl
+    - wget
+    - tar
+    - unzip
+    - zip
+    - less
+    - htop
+    - man-db

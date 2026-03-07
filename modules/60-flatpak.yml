@@ -1,0 +1,12 @@
+name: flatpak-setup
+type: shell
+commands:
+  # Install Flatpak and Discover with the Flatpak backend
+  - apt-get update
+  - >-
+    apt-get install -y --no-install-recommends
+    flatpak
+    plasma-discover
+    plasma-discover-backend-flatpak
+
+ 
