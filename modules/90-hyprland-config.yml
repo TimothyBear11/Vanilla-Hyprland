@@ -168,7 +168,7 @@ commands:
     bind = $mainMod, Q, killactive,
     bind = $mainMod, Return, exec, kitty
     bind = $mainMod, E, exec, $fileManager
-    bind = $mainMod, V, togglefloating,
+    bind = $mainMod SHIFT, V, togglefloating,
     bind = $mainMod, K, exec, kate
 
     # Flatpak apps
