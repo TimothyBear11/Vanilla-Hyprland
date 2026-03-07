@@ -1,0 +1,9 @@
+name: Install APT Packages
+
+type: apt
+
+commands:
+  - apt-get update
+  - apt-get install --no-install-recommends -y $(cat modules/apt_packages.yml | xargs)
+  - apt-get clean
+  - rm -rf /var/lib/apt/lists/*
