@@ -1,4 +1,4 @@
-name: wallpapers
+name: wallpapers-include
 type: shell
 commands:
   # Base commit for wallpapers: TimothyBear11/nixdots@0a0ccea5623f2925b78c8b7820794f2bb2f7e856
