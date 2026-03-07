@@ -132,7 +132,10 @@ jobs:
       - uses: actions/checkout@v6
 
       - name: Clean VIB working dirs
-        run: rm -rf sources Containerfile
+        run: |
+          rm -rf sources
+          rm -f Containerfile
+          mkdir -p sources
 
       - uses: vanilla-os/vib-gh-action@v1.0.7
         with:
