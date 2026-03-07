@@ -1,4 +1,4 @@
-name: audio-network
+name: audio-network-apt
 type: apt
 sources:
   - packages:
