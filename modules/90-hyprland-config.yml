@@ -1,4 +1,4 @@
-name: hyprland-config
+name: hyprland-config-noctalia
 type: shell
 commands:
   - mkdir -p /etc/skel/.config/hypr
