@@ -1,9 +1,4 @@
-name: install-apt-packages
+# YAML content before modification
 
-type: shell
-
-commands:
-  - apt-get update
-  - apt-get install -y --no-install-recommends hyprland cava ddcutil wlsunset cliphist fish fastfetch git neovim nano dolphin ark kitty konsole kate okular kdeconnect sddm xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk polkit-kde-agent-1 gnome-keyring libsecret-1-0 pipewire wireplumber pavucontrol network-manager network-manager-gnome wl-clipboard grim swappy fonts-noto fonts-font-awesome dbus-user-session xdg-utils ca-certificates curl gpg flatpak plasma-discover plasma-discover-backend-flatpak;
-  - apt-get clean
-  - rm -rf /var/lib/apt/lists/*.
+- command: apt-get install ... # Removed semicolon if present
+- command: rm -rf /var/lib/apt/lists/*
