@@ -1,4 +1,4 @@
-name: antigravity
+name: antigravity-ide
 type: shell
 commands:
   # Add Antigravity IDE apt repository
