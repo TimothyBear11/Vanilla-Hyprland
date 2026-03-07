@@ -30,6 +30,11 @@ stages:
     includes:
       - modules/10-core-packages.yml
 
+  - name: install-apt-packages
+    type: includes
+    includes:
+      - modules/20-install-apt-packages.yml
+
   - name: kde-apps
     type: includes
     includes:
@@ -55,6 +60,11 @@ stages:
     includes:
       - modules/60-flatpak.yml
 
+  - name: flatpak-flathub
+    type: includes
+    includes:
+      - modules/30-flatpak-flathub.yml    
+
   - name: wallpapers
     type: includes
     includes:
@@ -64,6 +74,11 @@ stages:
     type: includes
     includes:
       - modules/75-sddm-config.yml
+
+  - name: hyprland-config
+    type: includes
+    includes:
+      - modules/90-hyprland-config.yml
 
   - name: set-image-name-abroot
     type: includes
