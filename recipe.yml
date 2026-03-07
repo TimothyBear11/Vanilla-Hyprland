@@ -30,7 +30,7 @@ stages:
   - name: core-packages
     type: includes
     includes:
-      - modules/10-core-packages-apt.yml
+      - modules/10-core-packages.yml
 
   - name: kde-apps
     type: includes
