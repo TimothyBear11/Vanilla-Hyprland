@@ -9,10 +9,4 @@ commands:
     plasma-discover
     plasma-discover-backend-flatpak
 
-  # Add Flathub remote system-wide (available to all users)
-  - >-
-    flatpak remote-add --if-not-exists --system flathub
-    https://dl.flathub.org/repo/flathub.flatpakrepo
-
-  # Ensure the Flathub repo is enabled
-  - flatpak remote-modify --system --enable flathub || true
+ 
