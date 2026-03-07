@@ -1,0 +1,23 @@
+name: sddm-config
+type: shell
+commands:
+  # Configure the Breeze SDDM theme to use tc.png as the wallpaper.
+  # /usr/share/backgrounds/tc.png is placed there by the wallpapers module.
+  # includes.container/etc/sddm.conf.d/10-tbear.conf is already copied into the
+  # image via addincludes; this step patches the theme's own theme.conf.
+  - |
+    BREEZE_CONF="/usr/share/sddm/themes/breeze/theme.conf"
+    if [ -f "$BREEZE_CONF" ]; then
+      if grep -q "^background=" "$BREEZE_CONF"; then
+        sed -i "s|^background=.*|background=/usr/share/backgrounds/tc.png|" "$BREEZE_CONF"
+      else
+        sed -i "/^\[General\]/a background=/usr/share/backgrounds/tc.png" "$BREEZE_CONF"
+      fi
+    fi
+
+  # Enable SDDM display manager at image build time
+  - systemctl enable sddm || true
+
+  # Disable any conflicting display managers that may be pulled in as dependencies
+  - systemctl disable gdm3 || true
+  - systemctl disable lightdm || true

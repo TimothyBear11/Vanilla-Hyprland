@@ -1,0 +1,91 @@
+name: wallpapers
+type: shell
+commands:
+  # Base commit for wallpapers: TimothyBear11/nixdots@0a0ccea5623f2925b78c8b7820794f2bb2f7e856
+  # Create wallpaper directories
+  - mkdir -p /etc/skel/Pictures/Wallpapers /usr/share/backgrounds
+  # Download all wallpapers to /etc/skel so new users get them in ~/Pictures/Wallpapers
+  - >-
+    curl -fsSL
+    "https://raw.githubusercontent.com/TimothyBear11/nixdots/0a0ccea5623f2925b78c8b7820794f2bb2f7e856/Pictures/Wallpapers/1abig3.jpg"
+    -o /etc/skel/Pictures/Wallpapers/1abig3.jpg
+  - >-
+    curl -fsSL
+    "https://raw.githubusercontent.com/TimothyBear11/nixdots/0a0ccea5623f2925b78c8b7820794f2bb2f7e856/Pictures/Wallpapers/Beachcamping.png"
+    -o /etc/skel/Pictures/Wallpapers/Beachcamping.png
+  - >-
+    curl -fsSL
+    "https://raw.githubusercontent.com/TimothyBear11/nixdots/0a0ccea5623f2925b78c8b7820794f2bb2f7e856/Pictures/Wallpapers/Beachsunset.png"
+    -o /etc/skel/Pictures/Wallpapers/Beachsunset.png
+  - >-
+    curl -fsSL
+    "https://raw.githubusercontent.com/TimothyBear11/nixdots/0a0ccea5623f2925b78c8b7820794f2bb2f7e856/Pictures/Wallpapers/BlueDragon.png"
+    -o /etc/skel/Pictures/Wallpapers/BlueDragon.png
+  - >-
+    curl -fsSL
+    "https://raw.githubusercontent.com/TimothyBear11/nixdots/0a0ccea5623f2925b78c8b7820794f2bb2f7e856/Pictures/Wallpapers/Creation.png"
+    -o /etc/skel/Pictures/Wallpapers/Creation.png
+  - >-
+    curl -fsSL
+    "https://raw.githubusercontent.com/TimothyBear11/nixdots/0a0ccea5623f2925b78c8b7820794f2bb2f7e856/Pictures/Wallpapers/Igris.jpg"
+    -o /etc/skel/Pictures/Wallpapers/Igris.jpg
+  - >-
+    curl -fsSL
+    "https://raw.githubusercontent.com/TimothyBear11/nixdots/0a0ccea5623f2925b78c8b7820794f2bb2f7e856/Pictures/Wallpapers/Konabar.jpg"
+    -o /etc/skel/Pictures/Wallpapers/Konabar.jpg
+  - >-
+    curl -fsSL
+    "https://raw.githubusercontent.com/TimothyBear11/nixdots/0a0ccea5623f2925b78c8b7820794f2bb2f7e856/Pictures/Wallpapers/KonoBanner.jpg"
+    -o /etc/skel/Pictures/Wallpapers/KonoBanner.jpg
+  - >-
+    curl -fsSL
+    "https://raw.githubusercontent.com/TimothyBear11/nixdots/0a0ccea5623f2925b78c8b7820794f2bb2f7e856/Pictures/Wallpapers/Konofall.jpg"
+    -o /etc/skel/Pictures/Wallpapers/Konofall.jpg
+  - >-
+    curl -fsSL
+    "https://raw.githubusercontent.com/TimothyBear11/nixdots/0a0ccea5623f2925b78c8b7820794f2bb2f7e856/Pictures/Wallpapers/Milim.jpg"
+    -o /etc/skel/Pictures/Wallpapers/Milim.jpg
+  - >-
+    curl -fsSL
+    "https://raw.githubusercontent.com/TimothyBear11/nixdots/0a0ccea5623f2925b78c8b7820794f2bb2f7e856/Pictures/Wallpapers/Mistborn.jpg"
+    -o /etc/skel/Pictures/Wallpapers/Mistborn.jpg
+  - >-
+    curl -fsSL
+    "https://raw.githubusercontent.com/TimothyBear11/nixdots/0a0ccea5623f2925b78c8b7820794f2bb2f7e856/Pictures/Wallpapers/Nebula.png"
+    -o /etc/skel/Pictures/Wallpapers/Nebula.png
+  - >-
+    curl -fsSL
+    "https://raw.githubusercontent.com/TimothyBear11/nixdots/0a0ccea5623f2925b78c8b7820794f2bb2f7e856/Pictures/Wallpapers/PurpleSunset.png"
+    -o /etc/skel/Pictures/Wallpapers/PurpleSunset.png
+  - >-
+    curl -fsSL
+    "https://raw.githubusercontent.com/TimothyBear11/nixdots/0a0ccea5623f2925b78c8b7820794f2bb2f7e856/Pictures/Wallpapers/Runic.png"
+    -o /etc/skel/Pictures/Wallpapers/Runic.png
+  # TC.png is the SDDM background; stored as tc.png per convention
+  - >-
+    curl -fsSL
+    "https://raw.githubusercontent.com/TimothyBear11/nixdots/0a0ccea5623f2925b78c8b7820794f2bb2f7e856/Pictures/Wallpapers/TC.png"
+    -o /etc/skel/Pictures/Wallpapers/tc.png
+  - >-
+    curl -fsSL
+    "https://raw.githubusercontent.com/TimothyBear11/nixdots/0a0ccea5623f2925b78c8b7820794f2bb2f7e856/Pictures/Wallpapers/animesunset.png"
+    -o /etc/skel/Pictures/Wallpapers/animesunset.png
+  - >-
+    curl -fsSL
+    "https://raw.githubusercontent.com/TimothyBear11/nixdots/0a0ccea5623f2925b78c8b7820794f2bb2f7e856/Pictures/Wallpapers/extramagic.png"
+    -o /etc/skel/Pictures/Wallpapers/extramagic.png
+  - >-
+    curl -fsSL
+    "https://raw.githubusercontent.com/TimothyBear11/nixdots/0a0ccea5623f2925b78c8b7820794f2bb2f7e856/Pictures/Wallpapers/spikey.png"
+    -o /etc/skel/Pictures/Wallpapers/spikey.png
+  - >-
+    curl -fsSL
+    "https://raw.githubusercontent.com/TimothyBear11/nixdots/0a0ccea5623f2925b78c8b7820794f2bb2f7e856/Pictures/Wallpapers/sunsetwolf.png"
+    -o /etc/skel/Pictures/Wallpapers/sunsetwolf.png
+  # ChatGPT-generated wallpaper (URL-encoded filename)
+  - >-
+    curl -fsSL
+    "https://raw.githubusercontent.com/TimothyBear11/nixdots/0a0ccea5623f2925b78c8b7820794f2bb2f7e856/Pictures/Wallpapers/ChatGPT%20Image%20Oct%2023%2C%202025%2C%2008_40_19%20PM.png"
+    -o "/etc/skel/Pictures/Wallpapers/ChatGPT_Oct23_2025.png"
+  # Copy tc.png to system backgrounds path for SDDM (which runs before login)
+  - cp /etc/skel/Pictures/Wallpapers/tc.png /usr/share/backgrounds/tc.png

@@ -1,50 +1,69 @@
-name: TBears Vanilla OS # Replace this name with your image name
-id: tbearvanilla # Replace this ID with your image ID
+name: TBears Debian Hyprland
+id: tbearvanilla
 vibversion: 1.0.7
 
 stages:
 - id: build
-  base: ghcr.io/vanilla-os/desktop:main # Optionally, Replace this image URL with a different one i.e. nvidia:main, etc
+  base: debian:sid-slim
   addincludes: true
   singlelayer: false
   labels:
-    maintainer: self-maintained # Optionally, Replace this with your name
+    maintainer: self-maintained
   args:
-    DEBIAN_FRONTEND: noninteractive # Set the image environment as non-interactive
+    DEBIAN_FRONTEND: noninteractive
 
-  # Commands to run first before building the modules
+  # Disable recommends by default; each module installs only what is needed
   runs:
     commands:
-      - echo 'APT::Install-Recommends "1";' > /etc/apt/apt.conf.d/01norecommends
+      - echo 'APT::Install-Recommends "0";' > /etc/apt/apt.conf.d/01norecommends
 
   modules:
   - name: init-setup
     type: shell
     commands:
-    - lpkg --unlock
+    - lpkg --unlock || true
     - apt-get update
+    - apt-get install -y curl ca-certificates gnupg git wget
 
-  # Put your custom actions below this comment
-
-  - name: example-packages # Sample module using the built-in Apt module to install packages
-    type: apt
-    sources:
-      - packages:
-        - vim
-
-  - name: example-commands # Sample module demonstrating the Shell module with custom commands
-    type: shell
-    commands:
-    - echo Example output
-
-  - name: example-modules # Sample module demonstrating importing local and remote modules
+  - name: core-packages
     type: includes
     includes:
-      - modules/50-install-debs.yml # Sample local module present in this repository
-      # - gh:vanilla-os/dev-image:main:modules/00-basics.yml # Sample GitHub remote module in the format: `gh:your-name/your-repo:branch:modules/file.yml`
-      # - https://raw.githubusercontent.com/Vanilla-OS/dev-image/main/modules/05-go.yml # Sample full URL remote module
+      - modules/10-core-packages.yml
 
-  # Put your custom actions above this comment
+  - name: kde-apps
+    type: includes
+    includes:
+      - modules/20-kde-apps.yml
+
+  - name: audio-network
+    type: includes
+    includes:
+      - modules/30-audio-network.yml
+
+  - name: noctalia
+    type: includes
+    includes:
+      - modules/40-noctalia.yml
+
+  - name: antigravity
+    type: includes
+    includes:
+      - modules/50-antigravity.yml
+
+  - name: flatpak-setup
+    type: includes
+    includes:
+      - modules/60-flatpak.yml
+
+  - name: wallpapers
+    type: includes
+    includes:
+      - modules/70-wallpapers.yml
+
+  - name: sddm-config
+    type: includes
+    includes:
+      - modules/75-sddm-config.yml
 
   - name: set-image-name-abroot
     type: includes
@@ -56,7 +75,7 @@ stages:
     commands:
     - apt-get autoremove -y
     - apt-get clean
-    - lpkg --lock
+    - lpkg --lock || true
 
   - name: fsguard
     type: fsguard
@@ -68,8 +87,8 @@ stages:
       - name: remove-prev-fsguard
         type: shell
         commands:
-          - rm -rf /FsGuard 
-          - rm -f ./minisign.pub ./minisign.key 
+          - rm -rf /FsGuard
+          - rm -f ./minisign.pub ./minisign.key
           - chmod +x /usr/sbin/init
 
   - name: cleanup2
