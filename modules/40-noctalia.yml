@@ -1,97 +1,97 @@
-- name: noctalia-shell
-  type: shell
-  commands:
-    - apt-get update
-    - >-
-      apt-get install -y --no-install-recommends
-      build-essential
-      cmake
-      ninja-build
-      pkg-config
-      spirv-tools
-      qt6-base-dev
-      qt6-declarative-dev
-      qt6-shadertools-dev
-      qt6-tools-dev
-      qt6-tools-dev-tools
-      qt6-declarative-private-dev
-      qt6-wayland
-      qt6-wayland-dev
-      libwayland-dev
-      wayland-protocols
-      wayland-scanner
-      libdrm-dev
-      libgbm-dev
-      libpipewire-0.3-dev
-      libpam0g-dev
-      libglib2.0-dev
-      libpolkit-gobject-1-dev
-      libpolkit-agent-1-dev
-      libjemalloc-dev
-      libxcb1-dev
-      libqt6svg6-dev
-      libcli11-dev
-      libvulkan-dev
-      vulkan-validationlayers-dev
-      libgles2-mesa-dev
-      libbluetooth-dev
+name: noctalia-shell
+type: shell
+commands:
+  - apt-get update
+  - >-
+    apt-get install -y --no-install-recommends
+    build-essential
+    cmake
+    ninja-build
+    pkg-config
+    spirv-tools
+    qt6-base-dev
+    qt6-declarative-dev
+    qt6-shadertools-dev
+    qt6-tools-dev
+    qt6-tools-dev-tools
+    qt6-declarative-private-dev
+    qt6-wayland
+    qt6-wayland-dev
+    libwayland-dev
+    wayland-protocols
+    wayland-scanner
+    libdrm-dev
+    libgbm-dev
+    libpipewire-0.3-dev
+    libpam0g-dev
+    libglib2.0-dev
+    libpolkit-gobject-1-dev
+    libpolkit-agent-1-dev
+    libjemalloc-dev
+    libxcb1-dev
+    libqt6svg6-dev
+    libcli11-dev
+    libvulkan-dev
+    vulkan-validationlayers-dev
+    libgles2-mesa-dev
+    libbluetooth-dev
 
-    - git clone --depth=1 https://github.com/noctalia-dev/noctalia-qs /tmp/noctalia-qs
-    - >-
-      cmake -GNinja
-      -S /tmp/noctalia-qs
-      -B /tmp/noctalia-qs/build
-      -DCMAKE_BUILD_TYPE=RelWithDebInfo
-      -DCMAKE_INSTALL_PREFIX=/usr/local
-      -DDISTRIBUTOR="TBears-Debian-Hyprland"
-      -DCRASH_REPORTER=OFF
-    - cmake --build /tmp/noctalia-qs/build
-    - cmake --install /tmp/noctalia-qs/build
+  - git clone --depth=1 https://github.com/noctalia-dev/noctalia-qs /tmp/noctalia-qs
+  - >-
+    cmake -GNinja
+    -S /tmp/noctalia-qs
+    -B /tmp/noctalia-qs/build
+    -DCMAKE_BUILD_TYPE=RelWithDebInfo
+    -DCMAKE_INSTALL_PREFIX=/usr/local
+    -DDISTRIBUTOR="TBears-Debian-Hyprland"
+    -DCRASH_REPORTER=OFF
+  - cmake --build /tmp/noctalia-qs/build
+  - cmake --install /tmp/noctalia-qs/build
 
-    - |
-      set -eux
-      install -d /usr/local/bin
-      printf '%s\n' \
-        '#!/bin/bash' \
-        'exec quickshell -i noctalia-shell "$@"' \
-        > /usr/local/bin/noctalia-shell
-      chmod +x /usr/local/bin/noctalia-shell
+  - |
+    set -eux
+    install -d /usr/local/bin
+    printf '%s\n' \
+      '#!/bin/bash' \
+      'exec quickshell -i noctalia-shell "$@"' \
+      > /usr/local/bin/noctalia-shell
+    chmod +x /usr/local/bin/noctalia-shell
 
-      mkdir -p /etc/skel/.config/quickshell
-      git clone --depth=1 https://github.com/noctalia-dev/noctalia-shell.git /etc/skel/.config/quickshell/noctalia-shell
-      rm -rf /etc/skel/.config/quickshell/noctalia-shell/.git
+    mkdir -p /etc/skel/.config/quickshell
+    git clone --depth=1 https://github.com/noctalia-dev/noctalia-shell.git /etc/skel/.config/quickshell/noctalia-shell
+    rm -rf /etc/skel/.config/quickshell/noctalia-shell/.git
 
-    - >-
-      apt-get remove -y --auto-remove
-      build-essential
-      cmake
-      ninja-build
-      spirv-tools
-      qt6-base-dev
-      qt6-declarative-dev
-      qt6-shadertools-dev
-      qt6-tools-dev
-      qt6-tools-dev-tools
-      qt6-declarative-private-dev
-      qt6-wayland-dev
-      libwayland-dev
-      wayland-protocols
-      wayland-scanner
-      libdrm-dev
-      libgbm-dev
-      libpipewire-0.3-dev
-      libpam0g-dev
-      libglib2.0-dev
-      libpolkit-gobject-1-dev
-      libpolkit-agent-1-dev
-      libjemalloc-dev
-      libxcb1-dev
-      libqt6svg6-dev
-      libcli11-dev
-      libvulkan-dev
-      vulkan-validationlayers-dev
-      libgles2-mesa-dev
-      libbluetooth-dev
-    - rm -rf /tmp/noctalia-qs
-    - apt-get clean
-    - rm -rf /var/lib/apt/lists/*
+  - >-
+    apt-get remove -y --auto-remove
+    build-essential
+    cmake
+    ninja-build
+    spirv-tools
+    qt6-base-dev
+    qt6-declarative-dev
+    qt6-shadertools-dev
+    qt6-tools-dev
+    qt6-tools-dev-tools
+    qt6-declarative-private-dev
+    qt6-wayland-dev
+    libwayland-dev
+    wayland-protocols
+    wayland-scanner
+    libdrm-dev
+    libgbm-dev
+    libpipewire-0.3-dev
+    libpam0g-dev
+    libglib2.0-dev
+    libpolkit-gobject-1-dev
+    libpolkit-agent-1-dev
+    libjemalloc-dev
+    libxcb1-dev
+    libqt6svg6-dev
+    libcli11-dev
+    libvulkan-dev
+    vulkan-validationlayers-dev
+    libgles2-mesa-dev
+    libbluetooth-dev
+  - rm -rf /tmp/noctalia-qs
+  - apt-get clean
+  - rm -rf /var/lib/apt/lists/*
