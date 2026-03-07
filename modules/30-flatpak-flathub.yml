@@ -1,0 +1,5 @@
+name: flatpak-flathub
+type: shell
+commands:
+  - flatpak remote-add --if-not-exists --system flathub https://flathub.org/repo/flathub.flatpakrepo
+  - flatpak remote-modify --system --enable flathub
