@@ -49,13 +49,13 @@
     - cmake --install /tmp/noctalia-qs/build
 
     - |
-    set -eux
-    install -d /usr/local/bin
-    printf '%s\n' \
-      '#!/bin/bash' \
-      'exec quickshell -i noctalia-shell "$@"' \
-      > /usr/local/bin/noctalia-shell
-    chmod +x /usr/local/bin/noctalia-shell
+      set -eux
+      install -d /usr/local/bin
+      printf '%s\n' \
+        '#!/bin/bash' \
+        'exec quickshell -i noctalia-shell "$@"' \
+        > /usr/local/bin/noctalia-shell
+      chmod +x /usr/local/bin/noctalia-shell
 
       mkdir -p /etc/skel/.config/quickshell
       git clone --depth=1 https://github.com/noctalia-dev/noctalia-shell.git /etc/skel/.config/quickshell/noctalia-shell
