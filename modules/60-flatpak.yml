@@ -1,4 +1,4 @@
-name: flatpak-setup
+name: flatpak-setup-installs
 type: shell
 commands:
   # Install Flatpak and Discover with the Flatpak backend
