@@ -1,4 +1,4 @@
-name: sddm-config
+name: sddm-config-withbg
 type: shell
 commands:
   # Configure the Breeze SDDM theme to use tc.png as the wallpaper.
