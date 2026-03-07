@@ -50,14 +50,21 @@ commands:
   - cmake --build /tmp/noctalia-qs/build
   - cmake --install /tmp/noctalia-qs/build
 
-  # ── Create noctalia-shell wrapper ─────────────────────────────────────────
-  # The noctalia-shell command wraps: quickshell -i noctalia-shell [args...]
+   # ── Create noctalia-shell wrapper + install config ────────────────────────
   - |
+    set -eux
+
+    # Wrapper: quickshell -i noctalia-shell [args...]
     cat > /usr/local/bin/noctalia-shell << 'NSHELL'
     #!/bin/bash
     exec quickshell -i noctalia-shell "$@"
     NSHELL
-  - chmod +x /usr/local/bin/noctalia-shell
+    chmod +x /usr/local/bin/noctalia-shell
+
+    # New users will automatically get noctalia-shell in ~/.config/quickshell/
+    mkdir -p /etc/skel/.config/quickshell
+    git clone --depth=1 https://github.com/noctalia-dev/noctalia-shell.git /etc/skel/.config/quickshell/noctalia-shell
+    rm -rf /etc/skel/.config/quickshell/noctalia-shell/.git
 
   # ── Install noctalia-shell config to /etc/skel ───────────────────────────
   # New users will automatically get noctalia-shell in ~/.config/quickshell/
