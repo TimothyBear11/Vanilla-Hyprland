@@ -1,7 +1,72 @@
 # apt package install list for Debian sid hyprland daily-driver (excluding mako and slurp)
 
 apt_packages:
-  - package1
-  - package2
-  - package3
-  # Add more packages as needed, excluding mako and slurp
+  # Core Wayland/Hyprland
+  - hyprland
+
+  # Shell / UX utilities
+  - cava
+  - ddcutil
+  - wlsunset
+  - cliphist
+
+  # CLI tools
+  - fish
+  - fastfetch
+  - git
+  - neovim
+  - nano
+
+  # KDE apps
+  - dolphin
+  - ark
+  - kitty
+  - konsole
+  - kate
+  - okular
+  - kdeconnect
+
+  # Display manager
+  - sddm
+
+  # Portals
+  - xdg-desktop-portal
+  - xdg-desktop-portal-hyprland
+  - xdg-desktop-portal-gtk
+
+  # Polkit/keyring
+  - polkit-kde-agent-1
+  - gnome-keyring
+  - libsecret-1-0
+
+  # Audio
+  - pipewire
+  - wireplumber
+  - pavucontrol
+
+  # Networking
+  - network-manager
+  - network-manager-gnome
+
+  # Clipboard/screenshot/annotation (NO slurp)
+  - wl-clipboard
+  - grim
+  - swappy
+
+  # Fonts
+  - fonts-noto
+  - fonts-font-awesome
+
+  # Desktop essentials
+  - dbus-user-session
+  - xdg-utils
+
+  # Build/install prerequisites
+  - ca-certificates
+  - curl
+  - gpg
+
+  # Flatpak + Discover
+  - flatpak
+  - plasma-discover
+  - plasma-discover-backend-flatpak
