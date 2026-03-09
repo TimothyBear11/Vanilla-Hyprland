@@ -17,6 +17,6 @@ commands:
     gnome-keyring
     libsecret-1-0
     libsecret-tools
-    policykit-1
+    polkitd pkexec
   - apt-get clean
   - rm -rf /var/lib/apt/lists/*
