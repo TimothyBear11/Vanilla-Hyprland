@@ -8,7 +8,7 @@ commands:
     sddm sddm-theme-breeze
     qt6ct qt6-qpa-plugins libqt6svg6
     kde-cli-tools breeze breeze-cursor-theme
-    kde-spectacle kimageformat-plugins qt6-image-formats-plugins
+    kde-spectacle qt6-image-formats-plugins
     kio kio-extras polkit-kde-agent-1
   - apt-get clean
   - rm -rf /var/lib/apt/lists/*
