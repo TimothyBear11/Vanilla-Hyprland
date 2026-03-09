@@ -17,7 +17,7 @@ commands:
     qt6-declarative-private-dev
     qt6-wayland
     qt6-wayland-dev
-    qt6-waylandclientprivate-dev
+    qt6-wayland-private-dev
     libwayland-dev
     wayland-protocols
     libdrm-dev
